@@ -1,12 +1,22 @@
-<!DOCTYPE html>
 <html>
 
 <head>
- 
 </head>
 <script src="script.js"></script>
 <body>
-<h1>Page</h1>
+  <button>Click</button>
+  <br>
+  Click Me <span id='count'>0</span>
+  <script>
+    $button = document.querySelector('button');
+    $span = document.querySelector('span');
+    function increment() {
+      $span.innerHTML++;
+      window.open('/', '_blank');
+    }
+    $button.addEventListener('click', increment);
+  </script>
+
 </body>
 
 </html>
