@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>text</title>
+  <title></title>
 </head>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -24,7 +24,6 @@
   <!-- Click Me <span class="countspan" id="count"></span> -->
   <script>
     $(window).on('load', function (e) {
-      //$span.innerHTML = 10;
       jQuery(function ($) {
         var cookieval = Cookies.get('counter');
         if (cookieval === undefined) {
@@ -39,7 +38,6 @@
     // $button = document.querySelector('button');
     $span = document.querySelector('span');
     function increment() {
-      // $span.innerHTML++;
       jQuery(function ($) {
         var cookieval = Cookies.get('counter');
         Cookies.set("counter", +cookieval + 1);
