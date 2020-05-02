@@ -1,22 +1,59 @@
 <html>
 
 <head>
+  <title>text</title>
 </head>
-<script src="script.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script></script>
+<style>
+  .centered {
+    position: fixed;
+    /* or absolute */
+    top: 50%;
+    left: 50%;
+  }
+</style>
+
 <body>
-  <button>Click</button>
-  <br>
-  Click Me <span id='count'>0</span>
+  <a id="myLink" href="#" class="centered">link text</a>
+
+  <!-- <button class="clickbutton">Click</button> -->
+  <br />
+  <!-- Click Me <span class="countspan" id="count"></span> -->
   <script>
-    $button = document.querySelector('button');
+    $(window).on('load', function (e) {
+      //$span.innerHTML = 10;
+      jQuery(function ($) {
+        var cookieval = Cookies.get('counter');
+        if (cookieval === undefined) {
+          Cookies.set('counter', 1);
+          cookieval = 1;
+        }
+        $(".countspan").text(cookieval);
+        $("title").text('You clicked ' + cookieval + ' times');
+      });
+    });
+
+    // $button = document.querySelector('button');
     $span = document.querySelector('span');
     function increment() {
-      $span.innerHTML++;
+      // $span.innerHTML++;
+      jQuery(function ($) {
+        var cookieval = Cookies.get('counter');
+        Cookies.set("counter", +cookieval + 1);
+      });
       window.open(window.location.href, '_blank');
     }
-    $button.addEventListener('click', increment);
+    // $button.addEventListener('click', increment);
+    jQuery(function ($) {
+      $('#myLink').click(function () { increment(); return false; });
+    });
+    $(window).on('unload', function (e) {
+      Cookies.remove('counter');
+    });
   </script>
-
 </body>
 
 </html>
