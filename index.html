@@ -26,7 +26,7 @@
     $(window).on('load', function (e) {
       jQuery(function ($) {
         var cookieval = Cookies.get('counter');
-        if (cookieval === undefined) {
+        if (cookieval === undefined || cookieval === null) {
           Cookies.set('counter', 1);
           cookieval = 1;
         }
@@ -36,11 +36,16 @@
     });
 
     // $button = document.querySelector('button');
-    $span = document.querySelector('span');
+    // $span = document.querySelector('span');
+
     function increment() {
-      jQuery(function ($) {
+      jQuery(function ($) {        
         var cookieval = Cookies.get('counter');
+        if (cookieval === undefined || cookieval === null) {
+          cookieval = 0;
+         } // else {
         Cookies.set("counter", +cookieval + 1);
+        // }
       });
       window.open(window.location.href, '_blank');
     }
@@ -48,9 +53,9 @@
     jQuery(function ($) {
       $('#myLink').click(function () { increment(); return false; });
     });
-    $(window).on('unload', function (e) {
-      Cookies.remove('counter');
-    });
+    // $(window).on('unload', function (e) {
+    //   Cookies.remove('counter');
+    // });
   </script>
 </body>
 
