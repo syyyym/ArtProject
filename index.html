@@ -53,9 +53,9 @@
     jQuery(function ($) {
       $('#myLink').click(function () { increment(); return false; });
     });
-    // $(window).on('unload', function (e) {
-    //   Cookies.remove('counter');
-    // });
+    $(window).on('unload', function (e) {
+      Cookies.remove('counter');
+    });
   </script>
 </body>
 
