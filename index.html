@@ -10,7 +10,6 @@
 <style>
   .centered {
     position: fixed;
-    /* or absolute */
     top: 50%;
     left: 50%;
     font-size: 300%;    
@@ -19,10 +18,7 @@
 
 <body>
   <a id="myLink" href="#" class="centered">Link</a>
-
-  <!-- <button class="clickbutton">Click</button> -->
   <br />
-  <!-- Click Me <span class="countspan" id="count"></span> -->
   <script>
     $(window).on('load', function (e) {
       jQuery(function ($) {
@@ -36,22 +32,16 @@
       });
     });
 
-    // $button = document.querySelector('button');
-    // $span = document.querySelector('span');
-
     function increment() {
       jQuery(function ($) {        
         var cookieval = Cookies.get('counter');
         if (cookieval === undefined || cookieval === null) {
           cookieval = 0;
-         } // else {
+         }
         Cookies.set("counter", +cookieval + 1);
-        // }
       });
       window.open(window.location.href, '_blank', 'toolbar=0,location=0,menubar=0');
-      // window.open(window.location.href, '_blank');
     }
-    // $button.addEventListener('click', increment);
     jQuery(function ($) {
       $('#myLink').click(function () { increment(); return false; });
     });
