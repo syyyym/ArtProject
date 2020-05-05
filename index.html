@@ -23,7 +23,7 @@
     width: 100%;
     position: fixed;
     bottom: 30;
-    font-size: 100%;
+    font-size: 150%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -67,6 +67,7 @@
         }
 
         if (isMobile.any()) {
+          $(".centered").css("fontSize", "250%");
           if (cookieval > 0) {
             $(".countspan").text('You clicked ' + cookieval + ' times');
           }
@@ -82,7 +83,7 @@
         }
         Cookies.set("counter", +cookieval + 1);
       });
-      window.open(window.location.href, '_blank', 'toolbar=0,location=0,menubar=0');
+      window.open(window.location.href, '_blank', 'location=0,scrollbars=yes,status=yes,menubar=yes');
     }
     jQuery(function ($) {
       $('#myLink').click(function () { increment(); return false; });
