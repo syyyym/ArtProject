@@ -59,18 +59,14 @@
       jQuery(function ($) {
         var cookieval = Cookies.get('counter');
         if (cookieval === undefined || cookieval === null) {
-          Cookies.set('counter', 0);
-          cookieval = 0;
+          Cookies.set('counter', 1);
+          cookieval = 1;
         }
-        if (cookieval > 0) {
-          $("title").text('You clicked ' + cookieval + ' times');
-        }
+        $("title").text('You clicked ' + cookieval + ' times');
 
         if (isMobile.any()) {
           $(".centered").css("fontSize", "500%");
-          if (cookieval > 0) {
-            $(".countspan").text('You clicked ' + cookieval + ' times');
-          }
+          $(".countspan").text('You clicked ' + cookieval + ' times');
         }
       });
     });
